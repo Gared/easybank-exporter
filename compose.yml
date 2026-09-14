@@ -1,0 +1,16 @@
+services:
+  app:
+    image: node:lts-slim
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+      - path: .env.local
+        required: false
+
+    working_dir: /app
+    command: node index.mjs
+    depends_on:
+      - browserless
+  browserless:
+    image: ghcr.io/browserless/chromium:latest

@@ -1,0 +1,7 @@
+.idea/
+
+compose.*.yml
+.env.local
+*.png
+
+node_modules
