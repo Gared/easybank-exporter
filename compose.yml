@@ -15,6 +15,10 @@ services:
         condition: service_healthy
   browserless:
     image: ghcr.io/browserless/chromium:latest
+    environment:
+      - DATA_DIR=/data
+    volumes:
+      - ./browser-profiles:/data
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:3000/pressure | grep -q '\"isAvailable\": true' || exit 1"]
       interval: 5s
