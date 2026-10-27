@@ -28,7 +28,8 @@ const viewport = {
 };
 
 const launch = btoa(JSON.stringify({
-  args: [`--window-size=${viewport.width},${viewport.height}`, '--user-data-dir=/data/easybank-session'],
+  args: [`--window-size=${viewport.width},${viewport.height}`],
+  userDataDir: '/data/easybank-session',
 }));
 
 const browser = await puppeteer.connect({
